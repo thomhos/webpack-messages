@@ -29,7 +29,7 @@ class WebpackMessages {
 			onStart();
 		});
 
-		compiler.hooks.done("webpackMessages", stats => {
+		compiler.hooks.done.tap("webpackMessages", stats => {
 			const messages = format(stats);
 
 			if (messages.errors.length) {
