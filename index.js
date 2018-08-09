@@ -16,7 +16,8 @@ class WebpackMessages {
 
 	printError(str, arr) {
 		arr && (str += "\n\n" + arr.join(""));
-		clear() && this.logger(str);
+		this.clear && clear();
+		this.logger(str);
 	}
 
 	apply(compiler) {
